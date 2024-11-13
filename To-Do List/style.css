@@ -86,6 +86,10 @@ input:focus{
 .tasks{
     width: 100%;
     font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* border: 1px solid black; */
 }
 
 .addedTask{
@@ -94,16 +98,18 @@ input:focus{
     justify-content: space-between;
     padding: 10px 15px;
     cursor: pointer;
+    /* border: 1px solid black; */
+    gap: 10px;
 }
 
 input[type="radio"]{
-
     appearance: none;
     -webkit-apearance: none;
     border: 2px solid #999;
     border-radius: 50%;
     width: 20px;
     height: 20px;
+    margin-top: 3px;
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
@@ -114,6 +120,25 @@ input[type="radio"]:checked{
     border-color: green;
 }
 
-.addedTask>.leftPart>label{
-    margin-left: 10px;
+input[type="radio"]:checked+label{
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.5);
 }
+
+.addedTask>.leftPart{
+    width: 100%;
+}
+
+.addedTask>.leftPart{
+    display: flex;
+    justify-content: center;
+}
+
+.addedTask>.leftPart>label{
+    display: inline-block;
+    width: 90%;
+    margin-left: 10px;
+    cursor: pointer;
+    /* border: 1px solid black; */
+}
+

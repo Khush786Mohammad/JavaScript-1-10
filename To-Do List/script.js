@@ -2,50 +2,45 @@ let input = document.querySelector("#input-text");
 let addBtn = document.querySelector(".add-btn");
 let tasks = document.querySelector(".tasks");
 
-let idCounter = 1;
-let radioId = 1;
-let crossValue = 1;
+let counter = 1;
 
-addBtn.addEventListener('click',()=>{
-    const txt = input.value;
+function createTask(text){
     //check if enter text is not empty
-    if(txt.length != 0){
+    if(text.length != 0){
 
         //create a div Element
         let newChild = document.createElement('div');
-        //set the element class and its id
-        newChild.className = 'addedTask';
-        newChild.setAttribute("id",`task${idCounter}`);
+        newChild.setAttribute('class',`addedTask addedTask${counter}`) //set class
+        newChild.setAttribute("id",`task${counter}`); // set newChild id
 
         //create a radio button
-        const radioBtn = `<input type="radio" id=${radioId}>`;
+        const radioBtn = `<input type="radio" id=${counter}>`;
         const parser = new DOMParser();
-        const newRadioDoc = parser.parseFromString(radioBtn, 'text/html');
-        
+        const newRadioDoc = parser.parseFromString(radioBtn, 'text/html');   
         const newRadio = newRadioDoc.body.firstChild;
 
         //create a label tag for text
         const label = document.createElement('label');
-        label.setAttribute('for',`${radioId}`)
-        label.textContent = txt;
+        label.setAttribute('for',`${counter}`)
+        label.textContent = text;
 
         //create the cross
         const cross = document.createElement('img');
         cross.src = './images/cross.svg';
-        cross.setAttribute("alt","");
-        cross.setAttribute("id",`cross${crossValue}`);
-        cross.className = 'cross';
+        cross.setAttribute("alt","delete");
+        cross.setAttribute("id",`cross${counter}`);
+        cross.setAttribute('class',`cross addedTask${counter}`);
         cross.style.width='30px';
 
         //proper alignment
 
         const leftPart = document.createElement('div');
         leftPart.className = 'leftPart';
-        const rightPart = document.createElement('div');
-        rightPart.className = 'rightPart';
-
         leftPart.appendChild(newRadio);
         leftPart.appendChild(label);
+
+        const rightPart = document.createElement('div');
+        rightPart.className = 'rightPart';
         rightPart.appendChild(cross);
 
         newChild.appendChild(leftPart);
@@ -53,11 +48,48 @@ addBtn.addEventListener('click',()=>{
 
         tasks.appendChild(newChild);
 
-        radioId++;
-        idCounter++;
-        crossValue++;
+        counter++;
         input.value = "";
+    }
+}
+
+//creating tasks when add button is clicked
+addBtn.addEventListener('click',()=>{
+    createTask(input.value);
+});
+
+//creating task when user press enter button 
+
+input.addEventListener('keyup',(e)=>{
+    if(e.key === 'Enter'){
+        createTask(e.target.value);
+    }
+})
+
+//Event Delegation ---> events on dynamically added elements or on a specific level
+
+tasks.addEventListener('click',(event)=>{
+
+    // event for deleting tasks
+    if(event.target.matches('img')){
+        //get the second classname of the class like class="cross addedTask1"
+        let cls = event.target.classList[1];// cls -> addedTask1
+        let getClass = document.querySelector(`.${cls}`);
+        tasks.removeChild(getClass);
+    }
+
+    //event for showing status of task (compele/incomplete)
+    
+    if(event.target.matches(`input[type="radio"]`)){
+        let inp = event.target;
+        inp.addEventListener('click',()=>{
+            if(inp.checked){
+                inp.checked = false;
+            }
+            else{
+                inp.checked=true;
+            }
+        });
     }
 });
 
-//Also add event on button when enter key is pressed
