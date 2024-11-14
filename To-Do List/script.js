@@ -4,6 +4,8 @@ let tasks = document.querySelector(".tasks");
 
 let counter = 1;
 
+loadTask();
+
 function createTask(text){
     //check if enter text is not empty
     if(text.length != 0){
@@ -47,9 +49,12 @@ function createTask(text){
         newChild.appendChild(rightPart);
 
         tasks.appendChild(newChild);
+        // sessionStorage.setItem(counter,JSON.stringify(newChild));
 
         counter++;
         input.value = "";
+
+        saveTask();
     }
 }
 
@@ -66,6 +71,25 @@ input.addEventListener('keyup',(e)=>{
     }
 })
 
+//save task to local storage
+
+function saveTask(){
+    let tasklist = [];
+    tasks.querySelectorAll('label').forEach(function(item){
+        tasklist.push(item.textContent);
+    });
+    localStorage.setItem('task',JSON.stringify(tasklist));
+}
+
+//load task from local storage
+
+function loadTask(){
+    const taskList = JSON.parse(localStorage.getItem('task')) || [];
+    taskList.forEach(tk=>{
+        createTask(tk);
+    })
+}
+
 //Event Delegation ---> events on dynamically added elements or on a specific level
 
 tasks.addEventListener('click',(event)=>{
@@ -76,12 +100,16 @@ tasks.addEventListener('click',(event)=>{
         let cls = event.target.classList[1];// cls -> addedTask1
         let getClass = document.querySelector(`.${cls}`);
         tasks.removeChild(getClass);
+
+        //after deleting a particular task save the remaining task to local storage again.
+        saveTask();
     }
 
     //event for showing status of task (compele/incomplete)
     
     if(event.target.matches(`input[type="radio"]`)){
         let inp = event.target;
+        console.log(inp);
         inp.addEventListener('click',()=>{
             if(inp.checked){
                 inp.checked = false;
@@ -90,6 +118,13 @@ tasks.addEventListener('click',(event)=>{
                 inp.checked=true;
             }
         });
+
+        // localStorage.clear();
+
+        // tasks.querySelectorAll(`input[type="radio"]`).forEach((e)=>{
+        //     console.log(e);
+        // });
     }
 });
+
 
