@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", serif;
+}
+
+:root{
+    --primary-color: #edf2fc;
+    --secondary-color: #212121;
+}
+
+.dark-theme{
+    --primary-color: #212121;
+    --secondary-color: #edf2fc;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    background: var(--primary-color);
+    position: relative;
+}
+
+.navBar{
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    color: #606163;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    list-style-type: none;
+    color: var(--secondary-color);
+}
+
+.list li:hover {
+    cursor: pointer;
+    color: #ff4321
+}
+
+.list img:hover{
+    cursor: pointer;
+}
+
+.hero-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.text-part{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    width: 550px;
+    height: 620px;
+}
+
+span{
+    color: #ff4321
+}
+
+.img-part{
+    position: absolute;
+    width: 45%;
+    height: 80%;
+    right: 0;
+    top:0;
+}
+
+#orange-pattern{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+}
+
+#girl{
+    position: absolute;
+    z-index: 10;
+}
+
+#title{
+    font-size: 4rem;
+    color:var(--secondary-color);
+}
+
+#desc{
+    color: #606163;
+    line-height: 22px;
+}
+
+.btn{
+    width: 9rem;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    display: inline;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all ease-in 100ms;
+}
+
+.btn:hover{
+    cursor: pointer;
+    color: white;
+    background-color: #ff4321;
+}

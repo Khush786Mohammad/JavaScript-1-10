@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dark Theme Mode</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navBar">
+                <div class="logo">
+                    <img src="./Images/logo.png" alt="logo">
+                </div>
+                <div class="list">
+                    <li>Home</li>
+                    <li>About</li>
+                    <li>Portfolio</li>
+                    <li>Services</li>
+                    <li>Hire Me</li>
+                    <img src="./Images/moon.png" alt="" id="icon" width="30px">
+                </div>
+            </div>
+            <div class="hero-section">
+                <div class="text-part">
+                    <h1 id="title">I'm <span id="first-name">Kate</span> Amelia</h1>
+                    <p id="desc">This is my offical portfolio website to showcase my all works related to web development and UI design.</p>
+                    <div class="btn">Download CV</div>
+                </div>
+                <div class="img-part">
+                    <img src="./Images/pattern.png" alt="orange" id="orange-pattern" width="480px">
+                    <img src="./Images/girl.png" alt="girl" id="girl" width="425.85px">
+                </div>
+            </div>
+        </div>
+        <script>
+            let icon = document.querySelector("#icon");
+            icon.addEventListener('click',changeColor);
+            
+            function changeColor(){
+                document.body.classList.toggle('dark-theme');
+
+                if(document.body.classList.contains('dark-theme')){
+                    icon.setAttribute('src',`/Images/sun.png`)
+                }
+                else{
+                    icon.setAttribute('src',`/Images/moon.png`)
+                }
+            }
+        </script>
+    </body>
+    
+</html>
