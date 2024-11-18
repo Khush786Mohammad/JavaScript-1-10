@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="./Images/favicon.svg">
+    </head>
+    <body>
+        <div class="container">
+            <div class="search-bar">
+                <form formField>
+                    <input type="text" id="input-search" placeholder="enter city name" inputField>
+                    <div class="search-btn">
+                        <img src="./Images/search.svg" alt="" width="25">
+                    </div>
+                </form>
+            </div> 
+            <!-- Weather display section -->
+             <div class="weather-display">
+                <div class="weatherTypeImage">
+                    <img src="https://www.iconpacks.net/icons/2/free-sun-icon-3337-thumb.png" alt="weather type" width="120">
+                </div>
+
+                <div class="temperature">
+                    7<sup>o</sup><span id="celcius">C</span>
+                </div>
+
+                <div class="cityName">
+                    Edn Paradise
+                </div>
+             </div>
+             <!-- Additional weather details -->
+
+             <div additionalDetails>
+                <div humidityDetail>
+                    <div class="humid-icon">
+                        <img src="./Images/humidity.png" alt="" width="50">
+                    </div>
+                    <div class="humidity">48%</div>
+                    <p id="humid-txt">Humidity</p>
+                </div>
+
+                <div windSpeedDetaisl>
+                    <div class="speed-icon">
+                        <img src="./Images/windspeed.png" alt="windspeed" width="50">
+                    </div>
+                    <div class="wind-speed">50.29 <span id="kmh">km/h</span></div>
+                    <p id="windSpeed-txt">Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="script.js" defer></script>
+</html>
