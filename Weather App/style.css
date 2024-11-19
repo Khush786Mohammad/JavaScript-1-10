@@ -59,12 +59,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1.4rem;
+    gap: 1.2rem;
 }
 
 .temperature{
     color:white;
     font-size: 4rem;
+    margin-top: -20px;
 }
 
 #celcius{
@@ -79,7 +80,7 @@ body{
 [additionalDetails]{
     width: 100%;
     display: flex;
-    gap: 12px;
+    gap: 25px;
     justify-content: space-between;
     align-items: center;
     color: white;
@@ -98,7 +99,7 @@ body{
 
 [windSpeedDetaisl]{
     display: grid;
-    grid-template-columns: 50px 150px;
+    grid-template-columns: 50px 115px;
     grid-template-rows: repeat(2,1fr);
 }
 
@@ -111,6 +112,14 @@ body{
     font-size: 2rem;
 }
 
-#kmh{
-    font-size: 1.5rem;
+.displayClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+
+.display{
+    display: none;
 }
