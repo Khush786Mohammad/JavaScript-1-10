@@ -1,0 +1,121 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 238, 248);
+    padding: 0 20px;
+}
+
+.container{
+    width: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#heading{
+    user-select: none;
+}
+.curr-theme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-text{
+    font-size: 18px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.theme-icon{
+    cursor: pointer;
+}
+
+#heading{
+    display: flex;
+}
+
+.searchField{
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#inputField{
+    width: 100%;
+    height: 4rem;
+    padding-left: 4.5rem;
+    padding-right: 7.5rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+}
+
+#inputField:focus{
+    outline: none;
+}
+
+.keyboard-logo{
+    position: absolute;
+    left: 2%;
+    bottom: 27%;
+}
+
+.search-btn{
+    position: absolute;
+    right: 1%;
+    background-color: rgb(49, 49, 240);
+    color: white;
+    font-size: 18px;
+    padding: 15px 25px;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+    letter-spacing: .5px;
+}
+
+.display-container{
+    width: 100%;
+    border: 1px solid;
+    height: 450px;
+}
+
+.left-part{
+    background-image: url('./Images/berserk.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 100%;
+    width: 125px;
+    height: 125px;
+}
+
+.fa-solid{
+    font-size: 1rem;
+    color: black;
+}
