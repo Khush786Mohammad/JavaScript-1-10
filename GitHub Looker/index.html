@@ -20,11 +20,14 @@
         <!-- Input field -->
         <div class="searchField">
             <img src="./Images/keyboard.svg" alt="keyboard" class="keyboard-logo" width="45">
-            <input type="text" id="inputField" placeholder="Enter a GitHub username...">
+            <input type="text" id="inputField" placeholder="Enter a GitHub username. . ." autocomplete="off">
             <button class="search-btn">Search</button>
         </div>
 
         <!-- Display Container -->
+         <div class="error-msg">
+            <img src="./Images/404.svg" width="500">
+         </div>
 
         <div class="display-container">
             <div class="left-part">
@@ -32,46 +35,64 @@
 
             <div class="right-part">
                 <div class="nameAndJoined">
-                    <h2 id="user-name">Khush Mohammad</h2>
-                    <p id="user-joined">Joined 25 Sep 2022</p>
+                    <h2 id="user-name"></h2>
+                    <p id="user-joined"></p>
                 </div>
-                <div class="user-id">Khush786Mohammad</div>
-                <div class="user-details">Under Graduate || B.TECH || Front Developer</div>
+                <a href="" id="user-id" target="_blank"></a>
+                <div id="user-bio"></div>
 
                 <div class="profile-details">
-                    <span id="repos">Repos</span>
-                    <span id="followers">Followers</span>
-                    <span id="following">Following</span><br>
-                    <span id="noRepos">67</span>
-                    <span id="noFollowers">82</span>
-                    <span id="noFollowing">11</span>
+
+                    <div class="reposDetails bio">
+                        <p id="repos">Repos</p>
+                        <h3 id="noRepos"></h3>
+                    </div>
+
+                    <div class="followersDetails bio">
+                        <p id="followers">Followers</p>
+                        <h3 id="noFollowers"></h3>
+                    </div>
+
+                    <div class="followingDetails bio">
+                        <p id="following">Following</p>
+                        <h3 id="noFollowing"></h3>
+                    </div>
                 </div>
 
                 <div class="links">
-                    <div class="location">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p>Haldwani, Uttarakhand</p>
+                    <div class="location gtr">
+                        <div class="fontImg">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <p id="location"></p>
                     </div>
-                    <div class="website">
-                        <i class="fa-solid fa-link"></i>
-                        <p>https://aew@com</p>
+                    <div class="website gtr">
+                        <div class="fontImg">
+                            <i class="fa-solid fa-link"></i>
+                        </div>
+                        <a href="" id="blog"></a>
                     </div>
-                    <div class="twitter">
-                        <i class="fa-brands fa-twitter"></i>
-                        <p>No Twitter</p>
+                    <div class="twitter gtr">
+                        <div class="fontImg">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <a href="" id="twitter-id"></a>
                     </div>
-                    <div class="company">
-                        <i class="fa-solid fa-building-user"></i>
-                        <p>Not Available</p>
-                        <i class="fa-solid fa-k name-logo"></i>
+                    <div class="company gtr">
+                        <div class="fontImg">
+                            <svg height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                                <g fill="#4b6a9b">
+                                    <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <p style="margin-top: 5px;" id="company"></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
 </body>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <script src="script.js" defer></script>
 </html>
